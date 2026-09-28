@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Producto | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="/pages/cliente/inicio.html">TiendaWeb</a>
+    <nav class="menu" aria-label="Menú principal">
+      <a class="activo" href="/pages/cliente/catalogo.html">Catálogo</a>
+      <a href="/pages/cliente/carrito.html">Carrito<span id="contador-carrito"></span></a>
+      <a href="/pages/cliente/pedidos.html">Mis pedidos</a>
+      <a href="/pages/cliente/cuenta.html">Mi cuenta</a>
+    </nav>
+    <div class="acciones">
+      <span class="usuario-sesion" id="nombre-usuario"></span>
+      <button type="button" class="boton boton-secundario" id="btn-salir">Salir</button>
+    </div>
+  </header>
+  <p class="migas" id="migas"><a href="/pages/cliente/catalogo.html">Catálogo</a></p>
+  <p id="mensaje" class="mensaje oculto" role="alert"></p>
+  <div class="detalle-producto oculto" id="detalle">
+    <div class="detalle-galeria">
+      <div class="detalle-principal" id="imagen-principal"></div>
+      <div class="detalle-miniaturas" id="miniaturas"></div>
+    </div>
+    <div class="detalle-info">
+      <h1 id="nombre"></h1>
+      <span id="categoria" class="etiquetas-chip"></span>
+      <p><span class="estrellas" id="estrellas"></span> <span id="calificaciones" class="nota"></span></p>
+      <span class="precio" id="precio"></span>
+      <p id="entrega"></p>
+      <p id="descripcion"></p>
+      <div class="filas" style="align-items:flex-end;max-width:320px;">
+        <div class="campo" style="flex:0 0 90px;">
+          <label for="cantidad">Cantidad</label>
+          <input type="text" id="cantidad" value="1" inputmode="numeric" style="padding:0.5rem;border:1px solid #808080;border-radius:3px;width:100%;">
+        </div>
+        <button type="button" class="boton boton-primario boton-grande" id="btn-agregar-carrito">Agregar al carrito</button>
+      </div>
+      <p class="error" id="error-cantidad" role="alert"></p>
+    </div>
+  </div>
+
+  <div class="seccion oculto" id="seccion-resenas" style="max-width:900px;">
+    <h2>Recomendaciones de clientes</h2>
+    <div id="lista-recomendaciones"></div>
+    <p id="sin-recomendaciones" class="nota oculto">Este producto aún no tiene recomendaciones.</p>
+
+    <div id="panel-resena" class="oculto" style="border:1px solid #9db3d6;border-radius:6px;padding:1rem;background:#f7faff;margin-top:1rem;max-width:480px;">
+      <h3 style="margin-top:0;color:var(--azul-oscuro);font-size:1rem;">Tu calificación y recomendación</h3>
+      <p class="verificado" id="resena-disponible">Disponible porque ya compraste este producto</p>
+      <div id="estrellas-seleccion" style="font-size:1.4rem;color:#e6a100;cursor:pointer;" role="radiogroup" aria-label="Calificación de 0 a 5 estrellas"></div>
+      <p class="error" id="error-estrellas" role="alert"></p>
+      <textarea id="texto-recomendacion" maxlength="500" placeholder="Escribe tu recomendación (máx. 500 caracteres)" style="width:100%;min-height:70px;margin-top:0.5rem;padding:0.5rem;border:1px solid #808080;border-radius:3px;"></textarea>
+      <p class="error" id="error-texto" role="alert"></p>
+      <button type="button" class="boton boton-primario" id="btn-publicar" style="margin-top:0.5rem;">Publicar</button>
+    </div>
+    <p id="resena-no-disponible" class="nota oculto">Podrás calificar y recomendar este producto una vez que lo hayas recibido.</p>
+  </div>
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/validaciones.js"></script>
+  <script src="/js/dom.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/sesion.js"></script>
+  <script src="/js/carrito-contador.js"></script>
+  <script src="/js/producto-detalle.js"></script>
+</body>
+</html>

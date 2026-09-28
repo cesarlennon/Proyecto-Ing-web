@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi cuenta | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="/pages/cliente/inicio.html">TiendaWeb</a>
+    <nav class="menu" aria-label="Menú principal">
+      <a href="/pages/cliente/catalogo.html">Catálogo</a>
+      <a href="/pages/cliente/carrito.html">Carrito<span id="contador-carrito"></span></a>
+      <a href="/pages/cliente/pedidos.html">Mis pedidos</a>
+      <a class="activo" href="/pages/cliente/cuenta.html">Mi cuenta</a>
+    </nav>
+    <div class="acciones">
+      <span class="usuario-sesion" id="nombre-usuario"></span>
+      <button type="button" class="boton boton-secundario" id="btn-salir">Salir</button>
+    </div>
+  </header>
+  <main class="contenido" style="max-width:900px;margin:0 auto;">
+    <h1>Mi cuenta</h1>
+    <p id="mensaje" class="mensaje oculto" role="alert"></p>
+
+    <div class="pestanas" role="tablist">
+      <button type="button" id="tab-direcciones" class="activa" role="tab" aria-selected="true">Direcciones</button>
+      <button type="button" id="tab-pago" role="tab" aria-selected="false">Métodos de pago</button>
+    </div>
+
+    <section id="panel-direcciones">
+      <div id="lista-direcciones" class="tarjetas"></div>
+      <p id="direcciones-vacio" class="sin-resultados oculto">Aún no tienes direcciones registradas.</p>
+      <button type="button" class="boton boton-primario" id="btn-nueva-direccion" style="margin-top:1rem;">+ Agregar dirección</button>
+
+      <form id="form-direccion" class="oculto" novalidate style="border:1px solid var(--borde);border-radius:6px;padding:1rem;margin-top:1rem;">
+        <h2 id="form-direccion-titulo" style="font-size:1.05rem;color:var(--azul-oscuro);margin-top:0;">Nueva dirección</h2>
+        <div class="campo"><label for="calle">Calle *</label><input type="text" id="calle" maxlength="100"><p class="error" id="error-calle"></p></div>
+        <div class="filas">
+          <div class="campo"><label for="numeroExterior">No. exterior *</label><input type="text" id="numeroExterior" maxlength="10"><p class="error" id="error-numeroExterior"></p></div>
+          <div class="campo"><label for="numeroInterior">No. interior</label><input type="text" id="numeroInterior" maxlength="10"><p class="error" id="error-numeroInterior"></p></div>
+        </div>
+        <div class="filas">
+          <div class="campo"><label for="colonia">Colonia *</label><input type="text" id="colonia" maxlength="80"><p class="error" id="error-colonia"></p></div>
+          <div class="campo"><label for="codigoPostal">Código postal *</label><input type="text" id="codigoPostal" maxlength="5" inputmode="numeric"><p class="error" id="error-codigoPostal"></p></div>
+        </div>
+        <div class="filas">
+          <div class="campo"><label for="municipio">Municipio *</label><input type="text" id="municipio" maxlength="80"><p class="error" id="error-municipio"></p></div>
+          <div class="campo"><label for="ciudad">Ciudad *</label><input type="text" id="ciudad" maxlength="80"><p class="error" id="error-ciudad"></p></div>
+        </div>
+        <div class="campo">
+          <label for="idPais">País *</label>
+          <select id="idPais"></select>
+          <p class="error" id="error-idPais"></p>
+        </div>
+        <div class="campo campo-checkbox"><label><input type="checkbox" id="esPrincipal"> Establecer como dirección principal</label></div>
+        <div class="acciones-formulario">
+          <button type="submit" class="boton boton-primario">Guardar</button>
+          <button type="button" class="boton boton-secundario" id="btn-cancelar-direccion">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="panel-pago" class="oculto">
+      <div id="lista-metodos" class="tarjetas"></div>
+      <p id="metodos-vacio" class="sin-resultados oculto">Aún no tienes métodos de pago registrados.</p>
+      <button type="button" class="boton boton-primario" id="btn-nuevo-metodo" style="margin-top:1rem;">+ Agregar método de pago</button>
+
+      <form id="form-metodo" class="oculto" novalidate style="border:1px solid var(--borde);border-radius:6px;padding:1rem;margin-top:1rem;">
+        <h2 id="form-metodo-titulo" style="font-size:1.05rem;color:var(--azul-oscuro);margin-top:0;">Nuevo método de pago</h2>
+        <div class="campo"><label for="titular">Nombre del titular *</label><input type="text" id="titular" maxlength="100"><p class="error" id="error-titular"></p></div>
+        <div class="campo"><label for="numero">Número de tarjeta *</label><input type="text" id="numero" maxlength="19" inputmode="numeric" autocomplete="off"><p class="error" id="error-numero"></p></div>
+        <div class="filas-3">
+          <div class="campo"><label for="mesVencimiento">Mes de vencimiento *</label><input type="text" id="mesVencimiento" maxlength="2" inputmode="numeric" placeholder="MM"><p class="error" id="error-mesVencimiento"></p></div>
+          <div class="campo"><label for="anioVencimiento">Año de vencimiento *</label><input type="text" id="anioVencimiento" maxlength="4" inputmode="numeric" placeholder="AAAA"><p class="error" id="error-anioVencimiento"></p></div>
+          <div class="campo"><label for="cvv">CVV *</label><input type="text" id="cvv" maxlength="4" inputmode="numeric" autocomplete="off"><p class="error" id="error-cvv"></p></div>
+        </div>
+        <p class="nota">El CVV solo se usa para validar y no se guarda.</p>
+        <div class="campo campo-checkbox"><label><input type="checkbox" id="esPrincipalMetodo"> Establecer como método principal</label></div>
+        <div class="acciones-formulario">
+          <button type="submit" class="boton boton-primario">Guardar</button>
+          <button type="button" class="boton boton-secundario" id="btn-cancelar-metodo">Cancelar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/validaciones.js"></script>
+  <script src="/js/dom.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/sesion.js"></script>
+  <script src="/js/carrito-contador.js"></script>
+  <script src="/js/cuenta.js"></script>
+</body>
+</html>

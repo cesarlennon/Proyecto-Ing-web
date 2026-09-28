@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventarios | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body data-rol="inventarios">
+  <header class="encabezado">
+    <a class="logo" href="/pages/inventarios/inicio.html">TiendaWeb · Inventarios</a>
+    <nav class="menu" aria-label="Menú principal">
+      <a href="/pages/inventarios/inventario.html">Inventario</a>
+    </nav>
+    <div class="acciones">
+      <span class="usuario-sesion" id="nombre-usuario"></span>
+      <button type="button" class="boton boton-secundario" id="btn-salir">Salir</button>
+    </div>
+  </header>
+
+  <main class="bienvenida">
+    <h1>Bienvenido</h1>
+    <p>Aquí podrás actualizar precios, existencias e imágenes, y cambiar el estatus de los pedidos.</p>
+    <p class="nota">Usa el menú superior para consultar el inventario. Las demás opciones se irán agregando.</p>
+  </main>
+
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/sesion.js"></script>
+  <script src="/js/inicio.js"></script>
+</body>
+</html>

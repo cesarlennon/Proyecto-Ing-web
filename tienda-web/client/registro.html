@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crear cuenta | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="/">TiendaWeb</a>
+    <div class="menu"></div>
+    <div class="acciones"><a href="/login.html">Iniciar sesión</a></div>
+  </header>
+
+  <main class="contenedor-tarjeta">
+    <section class="panel">
+      <h1>Crea tu cuenta</h1>
+      <p class="verificado" id="identidad">Verificando tu identidad…</p>
+      <p id="mensaje-general" class="mensaje mensaje-error oculto" role="alert"></p>
+
+      <form id="form-registro" novalidate>
+        <div class="campo">
+          <label for="nombres">Nombre(s) *</label>
+          <input type="text" id="nombres" name="nombres" maxlength="80" autocomplete="given-name">
+          <p class="error" id="error-nombres" role="alert"></p>
+        </div>
+
+        <div class="filas">
+          <div class="campo">
+            <label for="apellidoPaterno">Apellido paterno *</label>
+            <input type="text" id="apellidoPaterno" name="apellidoPaterno" maxlength="50" autocomplete="family-name">
+            <p class="error" id="error-apellidoPaterno" role="alert"></p>
+          </div>
+          <div class="campo">
+            <label for="apellidoMaterno">Apellido materno</label>
+            <input type="text" id="apellidoMaterno" name="apellidoMaterno" maxlength="50">
+            <p class="error" id="error-apellidoMaterno" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="filas">
+          <div class="campo">
+            <label for="rfc">RFC *</label>
+            <input type="text" id="rfc" name="rfc" maxlength="13" autocomplete="off">
+            <p class="error" id="error-rfc" role="alert"></p>
+          </div>
+          <div class="campo">
+            <label for="curp">CURP *</label>
+            <input type="text" id="curp" name="curp" maxlength="18" autocomplete="off">
+            <p class="error" id="error-curp" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label>
+            <input type="checkbox" id="aceptaAviso" name="aceptaAviso">
+            Acepto el <a href="/aviso-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> *
+          </label>
+          <p class="error" id="error-aceptaAviso" role="alert"></p>
+        </div>
+
+        <div class="acciones-formulario">
+          <button type="submit" class="boton boton-primario" id="btn-registrar">Registrarme</button>
+          <a class="boton boton-secundario" href="/">Cancelar</a>
+        </div>
+        <p class="nota">Los campos con * son obligatorios. Después podrás agregar tus direcciones y métodos de pago.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/validaciones.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/registro.js"></script>
+</body>
+</html>

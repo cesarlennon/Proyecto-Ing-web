@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogos | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="/pages/admin/inicio.html">TiendaWeb · Administración</a>
+    <div class="menu"></div>
+    <div class="acciones">
+      <span class="usuario-sesion" id="nombre-usuario"></span>
+      <button type="button" class="boton boton-secundario" id="btn-salir">Salir</button>
+    </div>
+  </header>
+  <div class="layout-admin">
+    <nav class="barra-lateral" aria-label="Administración">
+      <a href="/pages/admin/productos.html">Productos</a>
+      <a class="activo" href="/pages/admin/catalogos.html">Catálogos</a>
+      <a href="/pages/admin/usuarios.html">Usuarios</a>
+    </nav>
+    <main class="contenido">
+      <h1>Catálogos</h1>
+      <p id="mensaje" class="mensaje oculto" role="alert"></p>
+
+      <div class="pestanas" role="tablist">
+        <button type="button" id="tab-categorias" class="activa" role="tab" aria-selected="true">Categorías</button>
+        <button type="button" id="tab-paises" role="tab" aria-selected="false">Países</button>
+      </div>
+
+      <div class="tabla-contenedor">
+        <table class="tabla">
+          <thead><tr><th>Nombre</th><th>Estado</th><th>Acciones</th></tr></thead>
+          <tbody id="cuerpo-tabla"></tbody>
+        </table>
+      </div>
+      <p id="sin-resultados" class="sin-resultados oculto">Aún no hay elementos en este catálogo.</p>
+
+      <form id="form-alta" class="formulario-alta" novalidate>
+        <div class="campo">
+          <label for="nombre-nuevo" id="etiqueta-nuevo">Nueva categoría</label>
+          <input type="text" id="nombre-nuevo" maxlength="80" autocomplete="off">
+          <p class="error" id="error-nuevo" role="alert"></p>
+        </div>
+        <button type="submit" class="boton boton-primario">Agregar</button>
+      </form>
+      <p class="nota" id="nota-catalogo">No se puede eliminar una categoría con productos asociados; puedes desactivarla.</p>
+    </main>
+  </div>
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/validaciones.js"></script>
+  <script src="/js/dom.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/sesion.js"></script>
+  <script src="/js/tabla-productos.js"></script>
+  <script src="/js/admin-catalogos.js"></script>
+</body>
+</html>

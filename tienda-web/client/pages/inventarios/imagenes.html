@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imágenes del producto | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="/pages/inventarios/inicio.html">TiendaWeb · Inventarios</a>
+    <nav class="menu" aria-label="Menú principal">
+      <a class="activo" href="/pages/inventarios/inventario.html">Inventario</a>
+    </nav>
+    <div class="acciones">
+      <span class="usuario-sesion" id="nombre-usuario"></span>
+      <button type="button" class="boton boton-secundario" id="btn-salir">Salir</button>
+    </div>
+  </header>
+  <main class="contenido">
+    <p class="nota"><a href="/pages/inventarios/inventario.html">‹ Volver al inventario</a></p>
+    <h1 id="titulo-pagina">Imágenes del producto</h1>
+    <p id="mensaje" class="mensaje oculto" role="alert"></p>
+
+    <section class="campo" aria-labelledby="titulo-imagenes">
+      <label id="titulo-imagenes">Imágenes (sin límite)</label>
+      <div id="galeria" class="galeria"></div>
+      <input type="file" id="archivos" accept="image/jpeg,image/png,image/gif,image/webp" multiple>
+      <button type="button" class="boton boton-primario boton-pequeno" id="btn-subir">Agregar imágenes</button>
+      <p class="nota">Formatos JPEG, PNG, GIF o WebP; hasta 10 a la vez y 5 MB cada una.</p>
+      <p class="error" id="error-imagenes" role="alert"></p>
+    </section>
+  </main>
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/dom.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/sesion.js"></script>
+  <script src="/js/galeria.js"></script>
+  <script src="/js/inventario-imagenes.js"></script>
+</body>
+</html>

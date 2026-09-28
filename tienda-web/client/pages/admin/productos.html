@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Productos | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="/pages/admin/inicio.html">TiendaWeb · Administración</a>
+    <div class="menu"></div>
+    <div class="acciones">
+      <span class="usuario-sesion" id="nombre-usuario"></span>
+      <button type="button" class="boton boton-secundario" id="btn-salir">Salir</button>
+    </div>
+  </header>
+  <div class="layout-admin">
+    <nav class="barra-lateral" aria-label="Administración">
+      <a class="activo" href="/pages/admin/productos.html">Productos</a>
+      <a href="/pages/admin/catalogos.html">Catálogos</a>
+      <a href="/pages/admin/usuarios.html">Usuarios</a>
+    </nav>
+    <main class="contenido">
+      <div class="barra-titulo">
+        <h1>Productos</h1>
+        <a class="boton boton-primario" href="/pages/admin/producto-form.html">+ Nuevo producto</a>
+      </div>
+      <p id="mensaje" class="mensaje oculto" role="alert"></p>
+
+      <form id="form-filtros" class="filtros" novalidate>
+        <input type="search" id="busqueda" placeholder="Buscar por nombre o ID" aria-label="Buscar producto" maxlength="100">
+        <select id="filtro-categoria" aria-label="Filtrar por categoría">
+          <option value="">Todas las categorías</option>
+        </select>
+        <label><input type="checkbox" id="ver-inactivos"> Mostrar inactivos</label>
+        <button type="submit" class="boton boton-secundario">Buscar</button>
+      </form>
+
+      <div class="tabla-contenedor">
+        <table class="tabla">
+          <thead>
+            <tr><th>ID</th><th>Nombre</th><th>Categoría</th><th>Precio</th><th>Stock</th><th>Entrega</th><th>Estado</th><th>Acciones</th></tr>
+          </thead>
+          <tbody id="cuerpo-tabla"></tbody>
+        </table>
+      </div>
+      <p id="sin-resultados" class="sin-resultados oculto">No se encontraron productos.</p>
+      <div id="paginacion" class="paginacion"></div>
+      <p class="nota">El stock solo lo ve el personal autorizado; los clientes nunca lo ven.</p>
+    </main>
+  </div>
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/dom.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/sesion.js"></script>
+  <script src="/js/tabla-productos.js"></script>
+  <script src="/js/admin-productos.js"></script>
+</body>
+</html>

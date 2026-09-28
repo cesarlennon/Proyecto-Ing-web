@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirmar compra | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="/pages/cliente/inicio.html">TiendaWeb</a>
+    <nav class="menu" aria-label="Menú principal">
+      <a href="/pages/cliente/catalogo.html">Catálogo</a>
+      <a class="activo" href="/pages/cliente/carrito.html">Carrito<span id="contador-carrito"></span></a>
+      <a href="/pages/cliente/pedidos.html">Mis pedidos</a>
+      <a href="/pages/cliente/cuenta.html">Mi cuenta</a>
+    </nav>
+    <div class="acciones">
+      <span class="usuario-sesion" id="nombre-usuario"></span>
+      <button type="button" class="boton boton-secundario" id="btn-salir">Salir</button>
+    </div>
+  </header>
+  <main class="contenido" style="max-width:900px;margin:0 auto;">
+    <h1>Confirmar compra</h1>
+    <p id="mensaje" class="mensaje oculto" role="alert"></p>
+
+    <section style="margin-bottom:1.5rem;">
+      <h2 style="font-size:1.05rem;color:var(--azul-oscuro);">Dirección de envío</h2>
+      <div id="lista-direcciones"></div>
+      <p class="nota"><a href="/pages/cliente/cuenta.html">+ Agregar dirección</a></p>
+    </section>
+
+    <section style="margin-bottom:1.5rem;">
+      <h2 style="font-size:1.05rem;color:var(--azul-oscuro);">Método de pago</h2>
+      <div id="lista-metodos"></div>
+      <p class="nota"><a href="/pages/cliente/cuenta.html">+ Agregar método de pago</a></p>
+    </section>
+
+    <section id="resumen-pedido" style="border:1px solid var(--borde);border-radius:6px;padding:1rem;max-width:400px;margin-left:auto;">
+      <h2 style="font-size:1.05rem;color:var(--azul-oscuro);margin-top:0;">Resumen del pedido</h2>
+      <div id="resumen-items"></div>
+      <p style="font-size:1.1rem;"><strong>Total: <span id="resumen-total">$0.00</span></strong></p>
+      <button type="button" class="boton boton-primario boton-grande" id="btn-confirmar" style="width:100%;">Confirmar y pagar</button>
+      <p class="nota">Pago simulado: no se realiza ningún cargo real.</p>
+    </section>
+  </main>
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/dom.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/sesion.js"></script>
+  <script src="/js/carrito-contador.js"></script>
+  <script src="/js/confirmar-compra.js"></script>
+</body>
+</html>

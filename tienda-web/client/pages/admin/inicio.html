@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administrador | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body data-rol="administrador">
+  <header class="encabezado">
+    <a class="logo" href="/pages/admin/inicio.html">TiendaWeb · Administrador</a>
+    <nav class="menu" aria-label="Menú principal">
+      <a href="/pages/admin/productos.html">Productos</a>
+      <a href="/pages/admin/catalogos.html">Catálogos</a>
+    </nav>
+    <div class="acciones">
+      <span class="usuario-sesion" id="nombre-usuario"></span>
+      <button type="button" class="boton boton-secundario" id="btn-salir">Salir</button>
+    </div>
+  </header>
+
+  <main class="bienvenida">
+    <h1>Bienvenido</h1>
+    <p>Aquí podrás administrar usuarios, productos, catálogos y consultar el reporte de ventas.</p>
+    <p class="nota">Usa el menú superior para administrar productos y catálogos. Las demás opciones se irán agregando.</p>
+  </main>
+
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/sesion.js"></script>
+  <script src="/js/inicio.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar sesión | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="/">TiendaWeb</a>
+  </header>
+
+  <main class="contenedor-tarjeta">
+    <section class="panel centrado">
+      <h1>Iniciar sesión</h1>
+      <p id="mensaje" class="mensaje mensaje-error oculto" role="alert"></p>
+      <a class="boton boton-secundario boton-grande" href="/api/auth/google">Continuar con Google</a>
+      <p class="nota">Serás redirigido a Google para verificar tu identidad. No pedimos tu contraseña.</p>
+      <hr>
+      <p>¿No tienes cuenta? <a href="/api/auth/google/registro">Regístrate</a></p>
+    </section>
+  </main>
+
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+  <script src="/js/login.js"></script>
+</body>
+</html>

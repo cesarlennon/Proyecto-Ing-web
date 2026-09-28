@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cliente | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body data-rol="cliente">
+  <header class="encabezado">
+    <a class="logo" href="/pages/cliente/inicio.html">TiendaWeb</a>
+    <nav class="menu" aria-label="Menú principal">
+      <a href="/pages/cliente/catalogo.html">Catálogo</a>
+      <a href="/pages/cliente/carrito.html">Carrito<span id="contador-carrito"></span></a>
+      <a href="/pages/cliente/pedidos.html">Mis pedidos</a>
+      <a href="/pages/cliente/cuenta.html">Mi cuenta</a>
+    </nav>
+    <div class="acciones">
+      <span class="usuario-sesion" id="nombre-usuario"></span>
+      <button type="button" class="boton boton-secundario" id="btn-salir">Salir</button>
+    </div>
+  </header>
+
+  <main class="bienvenida">
+    <h1>Bienvenido</h1>
+    <p>Aquí podrás consultar el catálogo, armar tu carrito y dar seguimiento a tus pedidos.</p>
+    <p class="nota">Usa el menú superior para explorar el catálogo. Las demás opciones se irán agregando.</p>
+  </main>
+
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/sesion.js"></script>
+  <script src="/js/carrito-contador.js"></script>
+  <script src="/js/inicio.js"></script>
+</body>
+</html>

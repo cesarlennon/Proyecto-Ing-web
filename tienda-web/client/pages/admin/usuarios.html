@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Usuarios | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="/pages/admin/inicio.html">TiendaWeb · Administración</a>
+    <div class="menu"></div>
+    <div class="acciones">
+      <span class="usuario-sesion" id="nombre-usuario"></span>
+      <button type="button" class="boton boton-secundario" id="btn-salir">Salir</button>
+    </div>
+  </header>
+  <div class="layout-admin">
+    <nav class="barra-lateral" aria-label="Administración">
+      <a href="/pages/admin/productos.html">Productos</a>
+      <a href="/pages/admin/catalogos.html">Catálogos</a>
+      <a class="activo" href="/pages/admin/usuarios.html">Usuarios</a>
+    </nav>
+    <main class="contenido">
+      <h1>Usuarios</h1>
+      <p id="mensaje" class="mensaje oculto" role="alert"></p>
+
+      <div class="filtros">
+        <select id="filtro-rol" aria-label="Filtrar por perfil">
+          <option value="">Todos los perfiles</option>
+          <option value="administrador">Administrador</option>
+          <option value="cliente">Cliente</option>
+          <option value="inventarios">Personal de inventarios</option>
+        </select>
+      </div>
+
+      <div class="tabla-contenedor">
+        <table class="tabla">
+          <thead><tr><th>Nombre</th><th>Correo</th><th>Perfil</th><th>Estado</th><th>Acciones</th></tr></thead>
+          <tbody id="cuerpo-tabla"></tbody>
+        </table>
+      </div>
+      <p id="sin-resultados" class="sin-resultados oculto">No hay usuarios con ese filtro.</p>
+
+      <button type="button" class="boton boton-primario" id="btn-nuevo-usuario">+ Nuevo usuario</button>
+
+      <form id="form-usuario" class="oculto" novalidate style="border:1px solid var(--borde);border-radius:6px;padding:1rem;margin-top:1.25rem;max-width:640px;">
+        <h2 id="form-titulo" style="font-size:1.05rem;color:var(--azul-oscuro);margin-top:0;">Nuevo usuario</h2>
+        <div class="filas">
+          <div class="campo">
+            <label for="correo">Correo *</label>
+            <input type="text" id="correo" autocomplete="off" placeholder="correo@ejemplo.com">
+            <p class="error" id="error-correo" role="alert"></p>
+          </div>
+          <div class="campo">
+            <label for="rol">Perfil *</label>
+            <select id="rol">
+              <option value="inventarios">Personal de inventarios</option>
+              <option value="administrador">Administrador</option>
+            </select>
+            <p class="error" id="error-rol" role="alert"></p>
+          </div>
+        </div>
+        <div class="filas">
+          <div class="campo">
+            <label for="nombres">Nombre(s) *</label>
+            <input type="text" id="nombres" maxlength="80">
+            <p class="error" id="error-nombres" role="alert"></p>
+          </div>
+          <div class="campo">
+            <label for="apellidoPaterno">Apellido paterno *</label>
+            <input type="text" id="apellidoPaterno" maxlength="50">
+            <p class="error" id="error-apellidoPaterno" role="alert"></p>
+          </div>
+        </div>
+        <div class="campo" style="max-width:320px;">
+          <label for="apellidoMaterno">Apellido materno</label>
+          <input type="text" id="apellidoMaterno" maxlength="50">
+          <p class="error" id="error-apellidoMaterno" role="alert"></p>
+        </div>
+        <div class="acciones-formulario">
+          <button type="submit" class="boton boton-primario">Guardar</button>
+          <button type="button" class="boton boton-secundario" id="btn-cancelar">Cancelar</button>
+        </div>
+        <p class="nota" id="nota-oauth">El usuario iniciará sesión con OAuth usando este correo.</p>
+      </form>
+    </main>
+  </div>
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/validaciones.js"></script>
+  <script src="/js/dom.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/sesion.js"></script>
+  <script src="/js/tabla-productos.js"></script>
+  <script src="/js/usuarios.js"></script>
+</body>
+</html>

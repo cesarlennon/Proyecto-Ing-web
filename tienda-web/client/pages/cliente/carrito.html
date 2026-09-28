@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrito | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="/pages/cliente/inicio.html">TiendaWeb</a>
+    <nav class="menu" aria-label="Menú principal">
+      <a href="/pages/cliente/catalogo.html">Catálogo</a>
+      <a class="activo" href="/pages/cliente/carrito.html">Carrito<span id="contador-carrito"></span></a>
+      <a href="/pages/cliente/pedidos.html">Mis pedidos</a>
+      <a href="/pages/cliente/cuenta.html">Mi cuenta</a>
+    </nav>
+    <div class="acciones">
+      <span class="usuario-sesion" id="nombre-usuario"></span>
+      <button type="button" class="boton boton-secundario" id="btn-salir">Salir</button>
+    </div>
+  </header>
+  <main class="contenido" style="max-width:900px;margin:0 auto;">
+    <h1>Carrito de compras</h1>
+    <p id="mensaje" class="mensaje oculto" role="alert"></p>
+    <div class="tabla-contenedor">
+      <table class="tabla">
+        <thead><tr><th>Producto</th><th>Precio</th><th>Cantidad</th><th>Subtotal</th><th></th></tr></thead>
+        <tbody id="cuerpo-tabla"></tbody>
+      </table>
+    </div>
+    <p id="carrito-vacio" class="sin-resultados oculto">Tu carrito está vacío. <a href="/pages/cliente/catalogo.html">Ir al catálogo</a>.</p>
+    <div id="resumen" class="barra-titulo" style="margin-top:1rem;">
+      <a class="boton boton-secundario" href="/pages/cliente/catalogo.html">Seguir comprando</a>
+      <div style="text-align:right;">
+        <p style="font-size:1.2rem;"><strong>Total: <span id="total">$0.00</span></strong></p>
+        <button type="button" class="boton boton-primario boton-grande" id="btn-comprar">Comprar</button>
+      </div>
+    </div>
+    <p class="nota">La cantidad se actualiza y los productos se eliminan aquí mismo; al eliminar se pide confirmación.</p>
+  </main>
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/dom.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/sesion.js"></script>
+  <script src="/js/carrito-contador.js"></script>
+  <script src="/js/carrito.js"></script>
+</body>
+</html>

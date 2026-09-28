@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Producto | TiendaWeb</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="logo" href="/pages/admin/inicio.html">TiendaWeb · Administración</a>
+    <div class="menu"></div>
+    <div class="acciones">
+      <span class="usuario-sesion" id="nombre-usuario"></span>
+      <button type="button" class="boton boton-secundario" id="btn-salir">Salir</button>
+    </div>
+  </header>
+  <div class="layout-admin">
+    <nav class="barra-lateral" aria-label="Administración">
+      <a class="activo" href="/pages/admin/productos.html">Productos</a>
+      <a href="/pages/admin/catalogos.html">Catálogos</a>
+      <a href="/pages/admin/usuarios.html">Usuarios</a>
+    </nav>
+    <main class="contenido">
+      <h1 id="titulo-pagina">Nuevo producto</h1>
+      <p id="mensaje" class="mensaje oculto" role="alert"></p>
+
+      <form id="form-producto" class="formulario-producto" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre *</label>
+          <input type="text" id="nombre" autocomplete="off" maxlength="120">
+          <p class="error" id="error-nombre" role="alert"></p>
+        </div>
+        <div class="campo">
+          <label for="descripcion">Descripción</label>
+          <textarea id="descripcion" maxlength="2000"></textarea>
+          <p class="error" id="error-descripcion" role="alert"></p>
+        </div>
+        <div class="filas-3">
+        <div class="campo">
+          <label for="precio">Precio (MXN) *</label>
+          <input type="text" id="precio" autocomplete="off" inputmode="decimal">
+          <p class="error" id="error-precio" role="alert"></p>
+        </div>
+        <div class="campo">
+          <label for="stock">Stock (unidades) *</label>
+          <input type="text" id="stock" autocomplete="off" inputmode="numeric">
+          <p class="error" id="error-stock" role="alert"></p>
+        </div>
+          <div class="campo">
+            <label for="idCategoria">Categoría *</label>
+            <select id="idCategoria"></select>
+            <p class="error" id="error-idCategoria" role="alert"></p>
+          </div>
+        </div>
+        <div class="filas-3">
+        <div class="campo">
+          <label for="diasEntrega">Entrega estimada (días) *</label>
+          <input type="text" id="diasEntrega" autocomplete="off" inputmode="numeric">
+          <p class="error" id="error-diasEntrega" role="alert"></p>
+        </div>
+          <div class="campo campo-checkbox oculto" id="campo-activo">
+            <label><input type="checkbox" id="activo"> Producto activo (visible para los clientes)</label>
+          </div>
+        </div>
+
+        <section class="campo" aria-labelledby="titulo-imagenes">
+          <label id="titulo-imagenes">Imágenes del producto (sin límite)</label>
+          <div id="galeria" class="galeria"></div>
+          <input type="file" id="archivos" accept="image/jpeg,image/png,image/gif,image/webp" multiple>
+          <button type="button" class="boton boton-secundario boton-pequeno" id="btn-subir">Agregar imágenes</button>
+          <p class="nota" id="nota-imagenes">Formatos JPEG, PNG, GIF o WebP; hasta 10 a la vez y 5 MB cada una.</p>
+          <p class="error" id="error-imagenes" role="alert"></p>
+        </section>
+
+        <div class="acciones-formulario">
+          <button type="submit" class="boton boton-primario" id="btn-guardar">Guardar</button>
+          <a class="boton boton-secundario" href="/pages/admin/productos.html">Cancelar</a>
+        </div>
+        <p class="nota">Los campos con * son obligatorios.</p>
+      </form>
+    </main>
+  </div>
+  <footer class="pie">
+    © 2026 TiendaWeb · <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+  </footer>
+
+  <script src="/js/validaciones.js"></script>
+  <script src="/js/dom.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/modal.js"></script>
+  <script src="/js/sesion.js"></script>
+  <script src="/js/tabla-productos.js"></script>
+  <script src="/js/galeria.js"></script>
+  <script src="/js/admin-producto-form.js"></script>
+</body>
+</html>

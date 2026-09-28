@@ -1,0 +1,29 @@
+{
+  "name": "tienda-web-servidor",
+  "version": "0.1.0",
+  "description": "Servidor del sistema de comercio electrónico (Ingeniería WEB)",
+  "private": true,
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test",
+    "crear-admin": "node scripts/crearAdmin.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-mysql-session": "^3.0.3",
+    "express-rate-limit": "^7.4.0",
+    "express-session": "^1.18.0",
+    "helmet": "^8.0.0",
+    "multer": "^2.0.0",
+    "mysql2": "^3.11.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "winston": "^3.14.0"
+  }
+}
